@@ -28,4 +28,11 @@ public class Store {
     public void setUpdatedAt() {
         this.updatedAt = LocalDateTime.now();
     }
+
+    public Long getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
 }
