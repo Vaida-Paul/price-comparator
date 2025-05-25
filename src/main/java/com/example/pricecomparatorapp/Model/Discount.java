@@ -1,9 +1,6 @@
 package com.example.pricecomparatorapp.Model;
 
-import com.example.pricecomparatorapp.Model.CSV.DiscountCSV;
-import com.example.pricecomparatorapp.Utils.LocalDateConverter;
 import com.opencsv.bean.CsvBindByName;
-import com.opencsv.bean.CsvCustomBindByName;
 import com.opencsv.bean.CsvDate;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -144,7 +141,7 @@ public class Discount {
         return createdAt;
     }
 
-    // Setters (if needed)
+
     public void setProduct(Product product) {
         this.product = product;
     }

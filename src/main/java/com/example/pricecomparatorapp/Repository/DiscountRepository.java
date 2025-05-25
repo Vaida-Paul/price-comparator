@@ -1,5 +1,6 @@
 package com.example.pricecomparatorapp.Repository;
 
+import com.example.pricecomparatorapp.Dto.PriceHistoryDto;
 import com.example.pricecomparatorapp.Model.Discount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -26,4 +27,17 @@ public interface DiscountRepository extends JpaRepository<Discount, Long> {
 
     @Query("SELECT d FROM Discount d WHERE d.product.category = :category AND d.fromDate <= CURRENT_DATE AND d.toDate >= CURRENT_DATE")
     List<Discount> findByCategory(@Param("category") String category);
+
+    @Query("SELECT NEW com.example.pricecomparatorapp.Dto.PriceHistoryDto(" +
+            "d.fromDate, d.originalPrice, d.percentage, d.store.name) " +
+            "FROM Discount d WHERE d.product.id = :productId " +
+            "ORDER BY d.fromDate DESC")
+    List<PriceHistoryDto> findPriceHistoryByProductId(@Param("productId") String productId);
+
+
+    @Query("SELECT d FROM Discount d WHERE d.product.id = :productId")
+    List<Discount> findByProductId(@Param("productId") String productId);
+
+    @Query("SELECT d FROM Discount d WHERE d.product.id = :productId AND d.fromDate <= CURRENT_DATE AND d.toDate >= CURRENT_DATE")
+    List<Discount> findCurrentDiscountsByProductId(@Param("productId") String productId);
 }

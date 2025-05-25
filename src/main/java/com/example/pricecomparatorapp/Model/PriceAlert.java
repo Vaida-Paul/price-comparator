@@ -33,4 +33,48 @@ public class PriceAlert {
 
     @Column(name = "triggered_at")
     private LocalDateTime triggeredAt;
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
+    public Product getProduct() {
+        return product;
+    }
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+    public BigDecimal getTargetPrice() {
+        return targetPrice;
+    }
+    public void setTargetPrice(BigDecimal targetPrice) {
+        this.targetPrice = targetPrice;
+    }
+    public Boolean getIsActive() {
+        return isActive;
+    }
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+    public LocalDateTime getTriggeredAt() {
+        return triggeredAt;
+    }
+    public void setTriggeredAt(LocalDateTime triggeredAt) {
+        this.triggeredAt = triggeredAt;
+    }
+
 }

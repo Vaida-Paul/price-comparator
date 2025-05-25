@@ -30,4 +30,43 @@ public class ShoppingListItem {
 
     @Column(name = "added_at", updatable = false)
     private LocalDateTime addedAt = LocalDateTime.now();
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public ShoppingList getShoppingList() {
+        return shoppingList;
+    }
+    public void setShoppingList(ShoppingList shoppingList) {
+        this.shoppingList = shoppingList;
+    }
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+    public Integer getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+    public Store getPreferredStore() {
+        return preferredStore;
+    }
+    public void setPreferredStore(Store preferredStore) {
+        this.preferredStore = preferredStore;
+    }
+    public LocalDateTime getAddedAt() {
+        return addedAt;
+    }
+    public void setAddedAt(LocalDateTime addedAt) {
+        this.addedAt = addedAt;
+    }
+
 }
